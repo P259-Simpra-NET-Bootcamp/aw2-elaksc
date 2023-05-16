@@ -58,7 +58,7 @@ This project contains an API for managing Staff data.
 Clone this repository to your local machine or download and extract the zip file.
 
 ```bash
-git clone https://github.com/username/ProjectName.git
+git clone https://github.com/P259-Simpra-NET-Bootcamp/aw2-elaksc.git
 ```
 Navigate to the project folder.
 
