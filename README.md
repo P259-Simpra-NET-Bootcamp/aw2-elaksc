@@ -43,3 +43,111 @@ Email alanini unique olmalidir.
         } 
     }
 ```
+
+--------
+--------
+--------
+--------
+
+# SimpraApi-W2
+
+This project contains an API for managing Staff data.
+
+### Installation
+
+Clone this repository to your local machine or download and extract the zip file.
+
+```bash
+git clone https://github.com/username/ProjectName.git
+```
+Navigate to the project folder.
+
+```bash
+cd ProjectName
+```
+Compile and run the project.
+
+```bash
+dotnet run
+```
+
+## Usage
+You can use an API client (e.g., Postman) to test the API.
+
+To retrieve all staff members with a GET request:
+```bash
+GET https://localhost:5001/api/staff
+```
+
+To retrieve a specific staff member by ID with a GET request:
+```bash
+GET https://localhost:5001/api/staff/{id}
+```
+
+
+To add a new staff member with a POST request:
+```bash
+POST https://localhost:5001/api/staff
+Content-Type: application/json
+
+{
+  "firstName": Ela
+  "lastName": "Kascioglu",
+  "email": "elaksc@example.com",
+  "phone": "5554443333",
+  "dateOfBirth": "1999-01-01",
+  "addressLine1": "Deneme",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "province": "string"
+}
+```
+
+To update a staff member with a PUT request:
+```bash
+
+PUT https://localhost:5001/api/staff/{id}
+Content-Type: application/json
+{
+  "firstName": Ela
+  "lastName": "Kascioglu",
+  "email": "elaksc@example.com",
+  "phone": "5554443333",
+  "dateOfBirth": "1999-01-01",
+  "addressLine1": "Deneme",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "province": "string"
+}
+```
+
+To delete a staff member with a DELETE request:
+```bash
+DELETE https://localhost:5001/api/staff/{id}
+```
+
+
+## Contributing
+If you have any issues, errors, or suggestions, please open an issue or contribute by submitting a pull request.
+
+- Fork this project and create a local copy.
+- Create a separate branch for new features or fixes.
+- Make your changes and test your code.
+- Commit your changes and push to your branch.
+- Propose your changes to the main project by opening a pull request.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
