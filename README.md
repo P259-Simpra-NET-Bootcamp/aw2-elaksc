@@ -63,7 +63,7 @@ git clone https://github.com/P259-Simpra-NET-Bootcamp/aw2-elaksc.git
 Navigate to the project folder.
 
 ```bash
-cd ProjectName
+cd aw2-elaksc
 ```
 Compile and run the project.
 
@@ -74,57 +74,116 @@ dotnet run
 ## Usage
 You can use an API client (e.g., Postman) to test the API.
 
-To retrieve all staff members with a GET request:
+- To retrieve all staff members with a GET request:
 ```bash
-GET https://localhost:5001/api/staff
+GET https://localhost:7113/api/staff
 ```
 
-To retrieve a specific staff member by ID with a GET request:
+- To retrieve a specific staff member by ID with a GET request:
 ```bash
-GET https://localhost:5001/api/staff/{id}
+GET https://localhost:7113/api/staff/{id}
 ```
 
 
-To add a new staff member with a POST request:
-```bash
-POST https://localhost:5001/api/staff
+- To add a new staff member with a POST request:
+```
+POST https://localhost:7113/api/staff
 Content-Type: application/json
 
+Successful Response (201 Created):
+```
+```bash
 {
-  "firstName": Ela
+  "id": 1,
+  "createdBy": "string",
+  "createdAt": "2023-05-12",
+  "firstName": "Ela",
   "lastName": "Kascioglu",
-  "email": "elaksc@example.com",
-  "phone": "5554443333",
-  "dateOfBirth": "1999-01-01",
-  "addressLine1": "Deneme",
+  "email": "elakasci@gmail.com",
+  "phone": "5551234567",
+  "dateOfBirth": "1990-01-01",
+  "addressLine1": "Bagdat St",
+  "city": "Istanbul",
+  "country": "Turkey",
+  "province": "string",
+  "fullName": "Ela Kascioglu"
+}
+
+```
+- To update a staff member with a PUT request:
+```
+PUT https://localhost:7113/api/staff/{id}
+Content-Type: application/json
+Example Json Payload:
+```
+```bash
+{
+  "id": 15,
+  "createdBy": "string",
+  "createdAt": "2023-05-12",
+  "firstName": "Ela",
+  "lastName": "Kascioglu",
+  "email": "elakasci@gmail.com",
+  "phone": "5551234567",
+  "dateOfBirth": "1990-01-01",
+  "addressLine1": "Bagdat St",
   "city": "Istanbul",
   "country": "Turkey",
   "province": "string"
 }
 ```
 
-To update a staff member with a PUT request:
+- To delete a staff member with a DELETE request:
 ```bash
-
-PUT https://localhost:5001/api/staff/{id}
-Content-Type: application/json
-{
-  "firstName": Ela
-  "lastName": "Kascioglu",
-  "email": "elaksc@example.com",
-  "phone": "5554443333",
-  "dateOfBirth": "1999-01-01",
-  "addressLine1": "Deneme",
-  "city": "Istanbul",
-  "country": "Turkey",
-  "province": "string"
-}
+DELETE https://localhost:7113/api/staff/{id}
 ```
 
-To delete a staff member with a DELETE request:
+
+- To filter staff members based on specific criteria, you can use the following endpoint:
 ```bash
-DELETE https://localhost:5001/api/staff/{id}
+GET https://localhost:7113/api/staff/filter?firstName={firstName}&city={city}
+
+`firstName`: Filter staff members by their first name.
+`city` : Filter staff members by their city.
 ```
+#### Example
+
+To filter staff members by first name and city, make a GET request to the filter endpoint with the desired parameters:
+```bash
+GET https://localhost:7113/api/staff/filter?firstName=Ela&city=Istanbul
+```
+
+##### Successful Response (200 OK)
+
+The API will respond with a list of staff members that match the provided filter criteria:
+
+```bash
+[
+  {
+    "id": 1,
+    "createdBy": "string",
+    "createdAt": "2023-05-12",
+    "firstName": "Ela",
+    "lastName": "Kascioglu",
+    "email": "elakasci@gmail.com",
+    "phone": "5551234567",
+    "dateOfBirth": "1990-01-01",
+    "addressLine1": "Bagdat St",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "province": "string",
+    "fullName": "Ela Kascioglu"
+  },
+  ...
+]
+
+```
+
+If no matching staff members are found, an empty array will be returned.
+Note: The filter endpoint supports filtering by both firstName and city, but you can modify the code to include additional filter criteria as needed.
+
+
+
 
 
 ## Contributing
